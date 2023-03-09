@@ -3,11 +3,18 @@ package objects;
 public class player {
 	private String name;
 	private int currentScore;
-	private boolean are_you_a_bot;
+	private boolean isBot;
 	private dice dice;
-
-	public static void main(String[] args) {
-		
+	
+	public player(String name, boolean isBot, int diceNum) {
+		this.name = name;
+		this.isBot = isBot;
+		this.dice = new dice(diceNum);
+	}
+	
+	public int roll() {
+		int val = this.dice.roll();
+		return val;
 	}
 
 	public String getName() {
@@ -18,15 +25,29 @@ public class player {
 		this.name = name;
 	}
 
+	public void setCurrentScore(int currentScore) {
+		this.currentScore = currentScore;
+	}
+
 	public int getCurrentScore() {
 		return currentScore;
 	}
 
-	public boolean are_you_a_bot() {
-		return are_you_a_bot;
+	public boolean isBot() {
+		return isBot;
 	}
 	
 	public dice getDice() {
 		return dice;
+	}
+	
+	public static void main(String[] args) {
+		player Minh = new player("Minh", false, 3);
+		int testChance = 0;
+		for(int i = 0; i < 100; i++) {
+			if(Minh.roll() == Minh.getDice().getNum().get(0))
+				testChance++;
+		}
+		System.out.println(testChance);
 	}
 }
