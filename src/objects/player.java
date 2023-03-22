@@ -41,6 +41,13 @@ public class player {
 		return dice;
 	}
 	
+	public void lastWords() {
+		if(this.isBot)
+			System.out.println("Beep. Bop. I'll be back.");
+		else
+			System.out.println("Putang ina mo.");
+	}
+	
 	public static void main(String[] args) {
 		player Minh = new player("Minh", false, 3);
 		int testChance = 0;

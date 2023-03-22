@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class gameround {
-	public List<player> players = new ArrayList<player>();
-	public int currentPlayer, winner;
-	public boolean done;
+	private List<player> players = new ArrayList<player>();
+	private int currentPlayer, winner;
+	private boolean done;
 	
 	public void calculatePoint(int currentPlayer, int roundPoint) {
 		player thisPlayer = players.get(currentPlayer);
